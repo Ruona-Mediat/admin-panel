@@ -44,7 +44,6 @@ export const SellerEditForm = ({ seller }: { seller: VendorSeller }) => {
     >
       <div className="flex flex-col gap-4">
         <div>
-          <Heading>Edit seller</Heading>
           <Label>
             Name
             <Input
