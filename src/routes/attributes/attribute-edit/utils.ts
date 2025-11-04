@@ -5,32 +5,25 @@ interface PossibleValue {
 export function findDuplicatePossibleValues(
   possibleValues: PossibleValue[]
 ): string[] {
-  if (!possibleValues || possibleValues.length === 0) {
-    return [];
-  }
+  if (!possibleValues?.length) return [];
 
-  const normalizedValueMap = new Map<string, string>();
-  const duplicateValues = new Set<string>();
+  const seen = new Map<string, string>();
+  const duplicates = new Set<string>();
 
-  for (const possibleValue of possibleValues) {
-    const originalValue = possibleValue.value?.trim();
+  for (const { value } of possibleValues) {
+    const original = value?.trim();
+    if (!original) continue;
 
-    if (!originalValue) {
-      continue;
-    }
-
-    const normalizedValue = originalValue.toLowerCase();
-
-    if (normalizedValueMap.has(normalizedValue)) {
-      const firstOccurrence = normalizedValueMap.get(normalizedValue);
-      if (firstOccurrence) {
-        duplicateValues.add(firstOccurrence);
-      }
+    const normalized = original.toLowerCase();
+    const first = seen.get(normalized);
+    
+    if (first) {
+      duplicates.add(first);
     } else {
-      normalizedValueMap.set(normalizedValue, originalValue);
+      seen.set(normalized, original);
     }
   }
 
-  return Array.from(duplicateValues);
+  return Array.from(duplicates);
 }
 
