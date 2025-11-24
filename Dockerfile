@@ -12,7 +12,7 @@ ARG VITE_MEDUSA_B2B_PANEL
 COPY package.json yarn.lock ./
 
 # Install dependencies
-RUN yarn install --frozen-lockfile --ignore-engines
+RUN yarn install --frozen-lockfile
 
 # Copy source code (includes .env which will be used for build)
 COPY . .
