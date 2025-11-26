@@ -18,7 +18,7 @@ export function OrderCreateShipment() {
   const ready = !isLoading && order
 
   return (
-    <RouteFocusModal>
+    <RouteFocusModal data-testid="order-create-shipment-modal">
       {ready && (
         <OrderCreateShipmentForm
           order={order}
