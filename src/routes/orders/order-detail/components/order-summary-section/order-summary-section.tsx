@@ -447,6 +447,7 @@ const Item = ({
                 <StatusBadge
                   color={reservation ? "green" : "orange"}
                   className="text-nowrap"
+                  data-testid={reservation ? "order-item-allocated-badge" : "order-item-not-allocated-warning-badge"}
                 >
                   {reservation
                     ? t("orders.reservations.allocatedLabel")
@@ -1246,11 +1247,12 @@ const Total = ({ order }: { order: AdminOrder }) => {
         </div>
       )}
 
-      <div className="text-ui-fg-base flex items-center justify-between">
+      <div className="text-ui-fg-base flex items-center justify-between" data-testid="order-outstanding-amount">
         <Text
           className="text-ui-fg-subtle text-semibold"
           size="small"
           leading="compact"
+          data-testid="order-outstanding-amount-label"
         >
           {t("orders.returns.outstandingAmount")}
         </Text>
@@ -1258,6 +1260,7 @@ const Total = ({ order }: { order: AdminOrder }) => {
           className="text-ui-fg-subtle text-bold" // ici
           size="small"
           leading="compact"
+          data-testid="order-outstanding-amount-value"
         >
           {getStylizedAmount(
             order.summary.pending_difference || 0,

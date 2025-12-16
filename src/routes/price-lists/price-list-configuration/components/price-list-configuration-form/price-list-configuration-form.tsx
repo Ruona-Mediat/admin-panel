@@ -217,12 +217,13 @@ export const PriceListConfigurationForm = ({
                           {t("operators.in")}
                         </div>
                       </div>
-                      <div className="flex items-center gap-1.5 px-1.5">
-                        <StackedDrawer id={STACKED_MODAL_ID}>
+                      <div className="flex items-center gap-1.5 px-1.5" data-testid="price-list-configuration-customer-groups-dropdown">
+                        <StackedDrawer id={STACKED_MODAL_ID} data-testid="price-list-configuration-customer-groups-stacked-drawer">
                           <StackedDrawer.Trigger asChild>
                             <button
                               type="button"
                               className="bg-ui-bg-field shadow-borders-base txt-compact-small text-ui-fg-muted flex flex-1 items-center gap-x-2 rounded-md px-2 py-1.5"
+                              data-testid="price-list-configuration-customer-groups-search-button"
                             >
                               <MagnifyingGlass />
                               {t(
@@ -231,20 +232,20 @@ export const PriceListConfigurationForm = ({
                             </button>
                           </StackedDrawer.Trigger>
                           <StackedDrawer.Trigger asChild>
-                            <Button variant="secondary">
+                            <Button variant="secondary" data-testid="price-list-configuration-customer-groups-browse-button">
                               {t("actions.browse")}
                             </Button>
                           </StackedDrawer.Trigger>
-                          <StackedDrawer.Content>
-                            <StackedDrawer.Header>
+                          <StackedDrawer.Content data-testid="price-list-configuration-customer-groups-drawer-content">
+                            <StackedDrawer.Header data-testid="price-list-configuration-customer-groups-drawer-header">
                               <StackedDrawer.Title asChild>
-                                <Heading>
+                                <Heading data-testid="price-list-configuration-customer-groups-drawer-title">
                                   {t(
                                     "priceLists.fields.customerAvailability.header"
                                   )}
                                 </Heading>
                               </StackedDrawer.Title>
-                              <StackedDrawer.Description className="sr-only">
+                              <StackedDrawer.Description className="sr-only" data-testid="price-list-configuration-customer-groups-drawer-description">
                                 {t(
                                   "priceLists.fields.customerAvailability.hint"
                                 )}

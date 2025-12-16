@@ -395,7 +395,7 @@ export const AttributeList = () => {
                         Updated At
                       </DropdownMenu.Item>
                     </div>
-                    <DropdownMenu.Separator />
+                    <DropdownMenu.Separator data-testid="attribute-list-sort-dropdown-separator" />
                     <div className="px-2 py-1">
                       <DropdownMenu.Item
                         onClick={() => handleSortOrderChange("asc")}

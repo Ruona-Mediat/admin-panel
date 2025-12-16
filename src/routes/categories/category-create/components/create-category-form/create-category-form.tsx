@@ -129,6 +129,7 @@ export const CreateCategoryForm = ({
       <KeyboundForm
         onSubmit={handleSubmit}
         className="flex size-full flex-col overflow-hidden"
+        data-testid="category-create-form"
       >
          <ProgressTabs
         dir={direction}value={activeTab}

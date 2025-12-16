@@ -16,10 +16,10 @@ export const CreateCategoryDetails = ({ form }: CreateCategoryDetailsProps) => {
   const direction = useDocumentDirection()
   return (
     <div className="flex flex-col items-center p-16">
-      <div className="flex w-full max-w-[720px] flex-col gap-y-8">
-        <div>
-          <Heading>{t("categories.create.header")}</Heading>
-          <Text size="small" className="text-ui-fg-subtle">
+      <div className="flex w-full max-w-[720px] flex-col gap-y-8" data-testid="category-create-form-content">
+        <div data-testid="category-create-form-header">
+          <Heading data-testid="category-create-form-heading">{t("categories.create.header")}</Heading>
+          <Text size="small" className="text-ui-fg-subtle" data-testid="category-create-form-hint">
             {t("categories.create.hint")}
           </Text>
         </div>

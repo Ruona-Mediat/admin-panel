@@ -210,6 +210,7 @@ export function InventoryCreateForm({ locations }: InventoryCreateFormProps) {
         <KeyboundForm
           className="flex h-full flex-col overflow-hidden"
           onSubmit={handleSubmit}
+          data-testid="inventory-create-form"
         >
           <RouteFocusModal.Header>
             <ProgressTabs.List className="border-ui-border-base -my-2 ml-2 min-w-0 flex-1 border-l">
@@ -244,9 +245,11 @@ export function InventoryCreateForm({ locations }: InventoryCreateFormProps) {
               value={Tab.DETAILS}
               className="h-full w-full overflow-auto px-3"
             >
-              <div className="mx-auto flex w-full max-w-[720px] flex-col gap-y-8 px-px py-16">
+              <div className="mx-auto flex w-full max-w-[720px] flex-col gap-y-8 px-px py-16" data-testid="inventory-create-form-content">
                 <div className="flex flex-col gap-y-8">
-                  <Heading>{t("inventory.create.title")}</Heading>
+                  <div data-testid="inventory-create-form-header">
+                    <Heading data-testid="inventory-create-form-heading">{t("inventory.create.title")}</Heading>
+                  </div>
                   <div className="flex flex-col gap-y-6">
                     <div className="grid grid-cols-1 gap-4 lg:grid-cols-2">
                       <Form.Field

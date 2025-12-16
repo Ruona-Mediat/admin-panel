@@ -49,14 +49,15 @@ export const CreateCollectionForm = () => {
       <KeyboundForm
         onSubmit={handleSubmit}
         className="flex h-full flex-col overflow-hidden"
+        data-testid="collection-create-form"
       >
         <RouteFocusModal.Header />
 
         <RouteFocusModal.Body className="flex size-full flex-col items-center p-16">
-          <div className="flex w-full max-w-[720px] flex-col gap-y-8">
-            <div>
-              <Heading>{t("collections.createCollection")}</Heading>
-              <Text size="small" className="text-ui-fg-subtle">
+          <div className="flex w-full max-w-[720px] flex-col gap-y-8" data-testid="collection-create-form-content">
+            <div data-testid="collection-create-form-header">
+              <Heading data-testid="collection-create-form-heading">{t("collections.createCollection")}</Heading>
+              <Text size="small" className="text-ui-fg-subtle" data-testid="collection-create-form-hint">
                 {t("collections.createCollectionHint")}
               </Text>
             </div>

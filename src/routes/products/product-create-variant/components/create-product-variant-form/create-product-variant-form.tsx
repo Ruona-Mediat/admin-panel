@@ -269,6 +269,7 @@ export const CreateProductVariantForm = ({
         <KeyboundForm
           onSubmit={handleSubmit}
           className="flex h-full flex-col overflow-hidden"
+          data-testid="product-variant-create-form"
         >
           <RouteFocusModal.Header>
             <div className="flex w-full items-center justify-between gap-x-4">
