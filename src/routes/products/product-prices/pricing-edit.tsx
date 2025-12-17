@@ -121,7 +121,7 @@ export const PricingEdit = ({
 
   return (
     <RouteFocusModal.Form form={form} data-testid="product-prices-form">
-      <KeyboundForm onSubmit={handleSubmit} className="flex size-full flex-col" data-testid="product-prices-keybound-form">
+      <KeyboundForm onSubmit={handleSubmit} className="flex size-full flex-col">
         <RouteFocusModal.Header data-testid="product-prices-form-header" />
         <RouteFocusModal.Body className="flex flex-col overflow-hidden" data-testid="product-prices-form-body">
           <div data-testid="product-prices-form-variant-pricing-wrapper">
@@ -130,7 +130,7 @@ export const PricingEdit = ({
         </RouteFocusModal.Body>
         <RouteFocusModal.Footer data-testid="product-prices-form-footer">
           <div className="flex w-full items-center justify-end gap-x-2" data-testid="product-prices-form-footer-actions">
-            <RouteFocusModal.Close asChild data-testid="product-prices-form-cancel-button-wrapper">
+            <RouteFocusModal.Close asChild>
               <Button variant="secondary" size="small" data-testid="product-prices-form-cancel-button">
                 {t("actions.cancel")}
               </Button>

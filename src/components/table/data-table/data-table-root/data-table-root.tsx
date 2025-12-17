@@ -261,7 +261,7 @@ export const DataTableRoot = <TData,>({
                         cell.getContext(),
                       );
 
-                      const isTabableLink = isFirstCell && !!to;
+                            const isTabableLink = isFirstCell && !!to;
                       const shouldRenderAsLink = !!to && !isSelectCell;
 
                       return (

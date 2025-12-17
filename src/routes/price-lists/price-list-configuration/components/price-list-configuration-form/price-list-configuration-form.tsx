@@ -260,7 +260,7 @@ export const PriceListConfigurationForm = ({
                         </StackedDrawer>
                       </div>
                       {fields.length > 0 ? (
-                        <div className="flex flex-col gap-y-1.5">
+                        <div className="flex flex-col gap-y-1.5" data-testid="price-list-configuration-customer-groups-list">
                           <Divider variant="dashed" />
                           <div className="flex flex-col gap-y-1.5 px-1.5">
                             {fields.map((field, index) => {
@@ -268,8 +268,9 @@ export const PriceListConfigurationForm = ({
                                 <div
                                   key={field.cg_id}
                                   className="bg-ui-bg-field-component shadow-borders-base flex items-center justify-between gap-2 rounded-md px-2 py-0.5"
+                                  data-testid={`price-list-configuration-customer-groups-item-${index}`}
                                 >
-                                  <Text size="small" leading="compact">
+                                  <Text size="small" leading="compact" data-testid={`price-list-configuration-customer-groups-item-${index}-name`}>
                                     {field.name}
                                   </Text>
                                   <IconButton
@@ -277,6 +278,7 @@ export const PriceListConfigurationForm = ({
                                     variant="transparent"
                                     type="button"
                                     onClick={() => remove(index)}
+                                    data-testid={`price-list-configuration-customer-groups-item-${index}-remove-button`}
                                   >
                                     <XMark />
                                   </IconButton>
